@@ -1,0 +1,349 @@
+a. Types  of functions
+b. Function declaration and Function invocation
+c. Function parameters
+d. Nested function         	 
+d. Built-in-Functions
+e. Scope of variables in functions
+
+
+about function: Certain lines of code which you need to reuse.
+Ex: login purpose, cleaning system and payment check-out.
+·        It consists of a bunch of statements which you call multiple times.
+·        For multiple times usage of similar statements need multiple calls.
+·        For a bigger task you always better to make a small task creation.
+·        It will be easier to code and manage.
+Principle:
+    	D-DO NOT
+     	R-REPEAT
+    	Y-YOURSELF
+To resolve these three issues we use functions.
+1.What is function?
+If you want to use a statement in different situations ,we use  or keep it in function.
+
+Ex: function great(){       	
+Console.log(“hello world”);
+}
+great();
+
+a. TYPES OF FUNCTIONS
+1. 	 Named functions
+2. 	 Anonymous functions
+3. 	 Immediately invoked function expression (IIFE)
+4. 	  Arrow function
+ 
+1. Named function
+ 	Syntax: function function name(parameters){
+                           	Body;
+                            	Return value;
+                     	}
+Ex:
+1. function sum(a,b){
+return a+b;
+}
+Console.log(sum(4,6));
+Console.log(sum(“m”,”n”);
+Console.log(sum(2,”m”);
+2. function example(first name,second name){
+console.log(first name+second name);
+}
+example(“mani”,”sha”);
+example(“”hello”,”world”);
+ Applications: Named functions are commonly used for defining reusable blocks of code. They are ideal for functions that need to be called multiple times from various places in your codebase.
+ For example, you might use a named function to handle form validation on a website.
+Real time applications:
+·        Event Handling: mouse clicks, keyboard inputs, touch interaction.
+·        User Interface(UI): Update and manipulate the user interface in real time.  Eg:buttons,forms and user actions.
+·        Gaming: Real-time games often rely on functions to handle player input,update game state etc..
+·        Form Validation: real time form fillings.
+·        Geolocation
+·        Real -time clock
+Eg: function updateClock() {
+	const now = new Date();
+	const time = now.toLocaleTimeString();
+	document.getElementById('clock').textContent = time;
+}
+ 
+setInterval(updateClock, 1000); // Update every second
+·        Live Stock Market Ticke
+·        Live Weather Updates
+·        Live Scoreboard
+ 
+2. Anonymous function
+ 	Function  without followed by it’s function name called anonymous function.
+ 	Syntax: function(parameters){
+               	body;
+          	return value;
+            	}
+è Here we need to assign a anonymous function to a variable for it’s development called function expression.
+ Ex:
+1. var sum=function(num1,num2){
+    var result=num1+num2;
+    return result;
+    }
+    console.log(sum(4,5));
+ Applications: Anonymous functions are often used as callback functions or for one-time use cases. They can be used in event handlers, such as responding to a button click or setting a timeout.
+Real time applications:
+Anonymous functions, often referred to as "function expressions" or "arrow functions" in JavaScript, are also used in real-time applications for various purposes. Here are some real-time applications of anonymous functions:
+ Event Handling:
+Ex: document.getElementById('button').addEventListener('click', () => {
+    // Execute real-time action on button click
+});
+·        Timers
+·        Form Validation
+·        Scrolling Effects
+·        Real-Time Search
+3. Immediately Invoked Function Expression	(IIFE).
+ When we want to execute a function immediately where they created IIFE used.
+No code reusability. Only at the place of creation only it will execute the program.
+Syntax: (function definition)();
+Ex:1. (function product(num1,num2){
+  	var result = num1*num2;
+console.log(result);
+}
+)(2,4);
+ 
+It provides more security in accessing a function by everyone.
+2. (function fullname(firstname,secondname){
+  	var fullname=firstname + secondname;
+ 	console.log(fullname);
+})(“mani”,”sha”);
+ Applications: IIFE is commonly used to create a private scope for variables and prevent polluting the global scope. They are also used for encapsulation and avoiding naming conflicts. For example, in modular JavaScript or when working with third-party libraries.
+Real time applications:
+Immediately Invoked Function Expressions (IIFE) in JavaScript are functions that are defined and executed immediately after their creation. They have a specific use case and are often employed in various real-time applications for specific reasons, including encapsulation and avoiding global scope pollution. Here are some real-time applications of IIFE functions in JavaScript:
+·        Avoiding Global Scope Pollution: This is especially important in large applications or when working with third-party libraries to avoid naming conflicts.
+·        Module Pattern
+·        Singleton Pattern
+var myModule = (function () {
+    var privateData = 'This is private';
+ 
+    function privateFunction() {
+    	// Private logic
+    }
+ 
+    return {
+    	publicFunction: function () {
+        	// Publicly accessible function
+    	},
+    };
+})();
+4. Arrow function:
+In general we declare a function with it’s keyword ‘function’ and function name ,parameters, body .
+But here without function keyword we develop the function. That  is called as arrow function.
+Syntax: var anyname=(parameters)=>{
+               Body;
+           Return value;  	
+}
+Ex:
+ 1. var sum =(num1,num2)=>{
+var result=num1 + num2;
+return result;
+};
+Console.log(sum(3,4));
+Another way of developing  a arrow function  code is:
+Ex: var product=(num1,num2)=>{
+   	var result =num1*num2;
+document.write(result);
+};
+product(5,4);
+Applications: Arrow functions are a concise way to write functions, and they are often used in situations where you need a short, inline function. They are commonly used with array methods like map, filter, and reduce, as well as for defining functions in React components.
+	Forms in arrow functions:
+a)     If only one statement in function body :
+Syntax: var variablename=(parameters)=> operation;
+       	With in a  single line we can finish the code.
+Ex:
+var product =(num1,num2)=> num1*num2;
+document.write(product(2,5));
+ 	b)  If only one parameter:
+       	Even we need not to use parenthesis  for parameters.
+        	In order to have more than one value we use parenthesis.
+Syntax:  var variablename=parameter=>argument;
+Ex: var cube=num1=> num1*num1*num1;
+      document.write (cube(5));
+	c)   If no arguments:
+Ex:var great=()=>document.write('m');
+great();
+We also use “_” instead of parenthesis().
+Ex: var great=_=>document.write(‘m’);
+In order to execute more than one statement:
+Ex: var great=()=>{
+    document.write('m');
+    document.write("Hello World");
+    document.write(7 + 3);
+}
+ 
+great();
+These methods are used to shorten the code.
+Code reusability in this programs are :
+Ex: let great =(user)=>{
+Console.log(‘mani’ +user);
+}
+Console.log(great(“sha”));
+EXPRESSION:  let a =5 +6;
+When we are assigning something to a variable, then it is called as expression.
+JavaScript treats function as an object.
+Ex: let add= function (num1,num2){
+   	Return num1+num2;
+ 	}
+let b=add(2,3);
+document.write(b);
+b. FUNCTION DECLARATION AND FUNCTION INVOCATION
+   syntax: function functionname(parameters){
+                       body;                                                     	//function declaration.
+                	return value;
+   	}
+functionname(arguments);                            	//function call
+ 
+Ex: function welcome(name){
+	const msg="hello" +" "+ name;
+   return msg;
+   }
+   const great=welcome("sameena");
+   console.log(great);
+c. FUNCTION PARAMETERS
+As  a parameters we can pass variables and objects .Without parameters also we can develop the program.
+i)       Using an object as a parameter.
+let details={
+name:”Manisha”,
+study:”B Sc”,
+};
+function about(get){
+	console.log(get.name);
+console.log(get.study);
+}
+about(details);
+v When you create a function it need parameter to perform operation.
+Ex:
+function  sum(a,b){
+return a+b;
+}
+console.log(sum(3,5));
+The above example shows the addition of two values only. Incase of addition of  more than two values dynamically we use operator called as spread operator.(…)
+Ex: function sum(…numbers){
+    	total=0;
+    	for(let i=0;i<numbers.lenght;i++
+d.NESTED FUNCTIONS
+In JavaScript, it is perfectly normal to have functions inside functions. The function within another function body is called a nested function.
+The nested function is private to the container function and cannot be invoked from outside the container function.
+Ex:
+function giveMessage(message) {
+        	let userMsg = message;
+        	function toUser(userName) {
+                    	let name = userName;
+                    	let greet = userMsg + " " + name;
+                    	return greet;
+        	}
+        	userMsg = toUser("Bob");
+        	return userMsg;
+}
+console.log(giveMessage("The world says hello dear: "));
+// The world says hello dear:
+e. BUILT-IN  FUNCTIONS
+JavaScript comes with certain built-in functions. To use them, they need to be invoked.
+Some of these built-in functions to understand their significance and usage.
+1. alert(): It  throws an alert box and often used when the user interacts.
+	This is like the pop up message while using websites.
+Ex: alert(“hello Manisha”);
+2. confirm():
+ It throws a confirm box where user can click "OK" or "Cancel". If "OK" is clicked, the function returns "true", else returns "false".
+Ex:let decision = confirm("Shall we proceed?");
+3. isFinite(): It determines if the number given as parameter is a finite number. If the parameter value is NaN,positive infinity, or negative infinity, this method will return false, else will return true.
+Ex: isFinite(30); 	//true
+isFinite('hello'); //false
+4. parseFloat(): This function parses string and returns a float number.
+The method stops parsing when it encounters a non-numerical character and further characters are ignored.
+It returns NaN when the first non-whitespace character cannot be converted to number.
+Ex: parseFloat("10.34");  	//10.34 
+parseFloat("10 20 30");   //10
+parseFloat("10.50 years"); //10.50
+JavaScript provides two-timer built-in functions. Let us explore these timer functions.
+1. setTimeout():
+ It executes a given function after waiting for the specified number of milliseconds.
+It takes 2 parameters. First is the function to be executed and the second is the number of milliseconds after which the given function should be executed.
+function executeMe(){
+console.log("Function says hello!")
+}
+setTimeout(executeMe, 3000);
+//It executes executeMe() after 3 seconds.
+2. clearTimeout(): It cancels a timeout previously established by calling setTimeout().
+ 
+It takes the parameter "timeoutID" which is the identifier of the timeout that can be used to cancel the execution of setTimeout(). The ID is returned by the setTimeout().
+Ex: function executeMe(){
+console.log("Function says hello!")
+}
+let timerId= setTimeout(executeMe, 3000);
+clearTimeout(timerId);
+3. setInterval():
+It executes the given function repetitively.
+ It takes 2 parameters, first is the function to be executed and second is the number of milliseconds. The function executes continuously after every given number of milliseconds.
+Ex: function executeMe(){
+console.log("Function says hello!");
+}
+setInterval(executeMe,3000);
+//It executes executeMe() every 3 seconds
+4. clearInterval():It cancels the timed, repeating execution which was previously established by a call to setInterval().
+It takes the parameter “intervalID” which is the identifier of the timeout that can be used to cancel the execution of setInterval(). The ID is returned by the setInterval().
+Ex: function executeMe(){
+console.log("Function says hello!");
+}
+let timerId=setInterval(executeMe, 2000);
+function stopInterval(){
+      	clearInterval(timerId);
+          console.log("Function says bye to setInterval()!")
+setTimeout(stopInterval,5000)
+//It executes executeMe() every 2 seconds and after 5 seconds, further calls to executeMe() is stopped.
+ 
+f. SCOPE OF VARIABLES IN FUNCTIONS
+Variable declaration in the JavaScript program can be done within the function or outside the function. But the accessibility of the variable to other parts of the same program is decided based on the place of its declaration. This accessibility of a variable is referred to as scope.
+JavaScript scopes can be of three types:
+·        Global scope
+·        Local scope
+·        Block scope
+Local variables:
+Variables declared inside the function would have local scope. These variables cannot be accessed outside the declared function block.
+Example:
+//Local variable cannot be accessed outside the function
+console.log("Message from outside the function: " + greet);
+//Message from inside the function: Hello JavaScript
+//Uncaught ReferenceError: greet is not defined
+If a local variable is declared without the use of keyword 'var', it takes a global scope.
+Example:
+var firstName = "Mark";                    	//Global variable
+function fullName() { 	//Variable declared without var has global scope
+lastName = "Zuckerberg";
+console.log("Full Name from inside the function: " firstName + " " + lastName);
+}
+fullName();
+console.log("Full Name from outside the function: " + firstName + " " + lastName);
+//Full Name from inside the function: Mark Zuckerberg
+//Full Name from outside the function: Mark Zuckerberg
+v In 2015, JavaScript introduced two new keywords to declare variables: let and const.
+Variables declared with 'var' keyword are function-scoped whereas variables declared with 'let' and 'const' are block-scoped and they exist only in the block in which they are defined.
+Consider the below example:
+function testVar() {
+                                    	if (10 == 10) {
+                                            	var flag = "true";
+                                    	}
+                                    	console.log(flag); //true
+}
+testVar();
+In the above example, the variable flag declared inside 'if' block is accessible outside the block since it has function scope
+Modifying the code to use 'let' variable will result in an error:
+function testVar() {
+	if (10 == 10) {
+    	let flag = "true";
+	}
+    console.log(flag); //Uncaught ReferenceError: flag is not defined
+}
+testVar();
+The usage of 'let' in the above code snippet has restricted the variable scope only to 'if' block.
+'const' has the same scope as that of 'let' i.e., block scope…..
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
