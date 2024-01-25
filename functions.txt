@@ -1,3 +1,5 @@
+Functions
+
 a. Types  of functions
 b. Function declaration and Function invocation
 c. Function parameters
